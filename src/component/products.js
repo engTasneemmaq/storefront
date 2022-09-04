@@ -8,13 +8,17 @@ import { addToCart } from '../store/cart.js';
 import { connect } from 'react-redux';
 
 function Products(props) {
-const style={width:'200px' , height:'200px'}
+const style={
+  width:'300px' , 
+  height:'300px',
+  
+}
   return (
     <>
-    <div className="f">
-    <section className="section-cart">
+    <div className="f" >
+    <section className="section-cart" style={{ backgroundColor: '#DDA0DD' , fontSize: 20,color : '#FFFAF0' } }>
         
-            <Button  color="inherit"> 🛒Cart({props.cart.totalCartItems})</Button>
+            <Button color="inherit"> 🛒Cart({props.cart.totalCartItems})</Button>
 
         {
           props.cart.cartItems.map(cartItem => {
