@@ -11,7 +11,7 @@ body{
   display:flex;
 height:50px;
 position: relative;
-  background-color: rgb(220, 11, 157);
+  background-color: rgb(66, 0, 46);
   
 
 
@@ -45,3 +45,13 @@ border: 2px solid black;
   display: flex;
   flex-direction:column;
 }
+
+.header_container {
+  display: flex;
+  font-size: xx-large;
+  font-family: monospace;
+  color: rgb(255, 255, 255);
+  height: 60px;
+}
+
+

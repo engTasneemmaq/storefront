@@ -8,15 +8,15 @@ import Tab from '@mui/material/Tab';
 
 function Categories(props) {
   const style ={
- fontSize:'15px',
+ fontSize:'25px',
  border:'0.5px solid rgba(25,255,28)',
-color : '#fff',
-boxShadow:'30px'
+color : '#7CFC00',
+boxShadow:'50px'
   }
     return (
         
         <section  >
-            <AppBar position="static">
+            <AppBar position="static" style={{ backgroundColor: '#800080' }}>
                 <Tabs >
                 {
                     props.categories.categories.map((category) => {
