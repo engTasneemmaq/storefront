@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { connect, useDispatch, useSelector } from 'react-redux';
 import { changeActiveCategory } from '../store/categories';
-import AppBar from '@mui/material/AppBar';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
+// import AppBar from '@mui/material/AppBar';
+// import Tabs from '@mui/material/Tabs';
+// import Tab from '@mui/material/Tab';
 import { useEffect } from 'react';
 import { Breadcrumbs } from '@mui/material';
 import Link from '@material-ui/core/Link';
