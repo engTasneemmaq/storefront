@@ -9,8 +9,8 @@ import { connect } from 'react-redux';
 
 function Products(props) {
 const style={
-  width:'300px' , 
-  height:'300px',
+  width:'150px' , 
+  height:'150px',
   
 }
   return (
@@ -87,11 +87,12 @@ const style={
   );
 }
 
-
+// access reducer with any component 
 const mapStateToProps = (state) => {
   return { products: state.products, categories: state.categories, cart: state.cart };
 };
 
+// name methode will use it
 const mapDispatchToProps = { addToCart };
 
 

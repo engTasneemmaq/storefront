@@ -1,5 +1,5 @@
 body{
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(183, 164, 164);
 }
 .header{
 
@@ -54,4 +54,19 @@ border: 2px solid black;
   height: 60px;
 }
 
+
+.cat{
+  cursor: pointer;
+  color: beige;
+}
+
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 
