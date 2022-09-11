@@ -160,7 +160,10 @@ export default (state = initialState, action) => {
         return product;
       }
     });
+
+
   default:
     return state;
   }
 };
+
