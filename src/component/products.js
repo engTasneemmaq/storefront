@@ -5,6 +5,8 @@ import { CardHeader } from '@mui/material';
 import Avatar from '@mui/material/Avatar';
 import  Button from '@mui/material/Button';
 import { addToCart } from '../store/cart.js';
+import { deletefromcart } from "../store/cart";
+import { getData } from "../store/localStorage";
 import { connect } from 'react-redux';
 
 function Products(props) {
@@ -13,9 +15,13 @@ const style={
   height:'150px',
   
 }
+
+let data = getData();
+
+
   return (
     <>
-    <div className="f" >
+    <div className="cart-container" >
     <section className="section-cart" style={{ backgroundColor: '#DDA0DD' , fontSize: 20,color : '#FFFAF0' } }>
         
             <Button color="inherit"> 🛒Cart({props.cart.totalCartItems})</Button>
@@ -23,9 +29,12 @@ const style={
         {
           props.cart.cartItems.map(cartItem => {
             return (
-              <p >
-                {cartItem.name}: {cartItem.inCart} pc(s) /
+              <>
+               <p className="cartData">
+               {cartItem.inCart > 0 ? <> {cartItem.name}: {cartItem.inCart} <span> ||</span> </> : null }
+                
               </p>
+              </>
             );
           })
 
@@ -40,7 +49,7 @@ const style={
 
 <div className="ddd">
   
-  <div className="dd">
+<div className="product-list" style={{ backgroundColor: '#968e8e' }}>
           {
             props.products.map((product) => (
               
@@ -61,18 +70,32 @@ const style={
                     title={'Price  ' + product.price + '$'}
                     subheader={'In Stock  ' + product.inStock + '  Pcs'}
                   />
-                  <Button
-                    variant="contained"
-                    color="secondary"
-                    style={{ width: 100 + '%' }}
-                    onClick={() => {
-                      props.addToCart(product);
-                    }
-                    }>
+            
+                    <CardHeader
+                      title={"Price  " + product.price + "$"}
+                      subheader={"In Stock  " + product.inStock + "  Pcs"}
+                    />
+                    <Button
+                      variant="contained"
+                      color="primary"
+                      style={{ width: 50 + "%" }}
+                      onClick={() => {
+                        props.addToCart(product);
+                      }}
+                    >
                       ADD TO CART
-                  </Button>
-
-                </Card>
+                    </Button>
+                    <Button
+                      variant="contained"
+                      color="secondary"
+                      style={{ width: 50 + "%" }}
+                      onClick={() => {
+                        props.deletefromcart(product);
+                      }}
+                    >
+                      delete item
+                    </Button>
+                  </Card>
                 :
                 null
             ))
@@ -93,7 +116,7 @@ const mapStateToProps = (state) => {
 };
 
 // name methode will use it
-const mapDispatchToProps = { addToCart };
+const mapDispatchToProps = { addToCart, deletefromcart  };
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(Products);
