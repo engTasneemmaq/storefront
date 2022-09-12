@@ -4,11 +4,12 @@
 
 ## Deployment Test:
 
-[netlify link](https://631dd7e57bc2081e6ecd7155--neon-rabanadas-320a0e.netlify.app/)
+[netlify link](https://631ef94dd1b60470c29d7601--meek-narwhal-a9d9e6.netlify.app/)
 
 
 
 ## UML Diagram>>
+
 ![uml](./assets/uml-storefront.jpg)
 
 ## Result Image>>
